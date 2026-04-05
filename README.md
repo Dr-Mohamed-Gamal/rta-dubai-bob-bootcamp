@@ -118,10 +118,9 @@ User
 Before starting, make sure you have:
 
 - [ ] **IBM Bob IDE** installed and open (VS Code extension)
-- [ ] **watsonx Orchestrate SaaS environment** provisioned and accessible
+- [ ] **watsonx Orchestrate SaaS environment** provisioned and accessible, with your **environment URL** and **API key** ready
 - [ ] **Python 3.10+** installed
 - [ ] **`uv`** package manager installed (`pip install uv`)
-- [ ] Your **wxO environment URL** and **API key** ready
 
 > **Tip:** Your trainer will provide the wxO environment URL and API key before the lab starts.
 
