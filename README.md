@@ -119,6 +119,22 @@ Before starting, make sure you have:
 
 - [ ] **IBM Bob IDE** installed and open (VS Code extension)
 - [ ] **watsonx Orchestrate SaaS environment** provisioned and accessible, with your **environment URL** and **API key** ready — no account yet? [Provision a free trial here](https://www.ibm.com/account/reg/us-en/signup?formid=urx-52753&cm_sp=ibmdev-_-developer-_-trial&utm_source=ibm_developer&utm_content=in_content_link&utm_id=tutorials_develop-agents-no-code-watsonx-orchestrate)
+
+#### How to get your API key and Service instance URL
+
+1. Log in to your watsonx Orchestrate environment
+2. Click your **Profile icon** in the top-right corner
+3. Click **Settings**
+4. Click the **API details** tab
+5. Click **Generate API key** — copy and save it somewhere safe
+6. Copy the **Service instance URL** shown below the button
+
+```
+Service instance URL:
+https://api.dl.watson-orchestrate.ibm.com/instances/<your-instance-id>
+```
+
+> You will need both the **API key** and the **Service instance URL** when activating your environment in Step 5.
 - [ ] **Python 3.10+** installed
 - [ ] **`uv`** package manager installed (`pip install uv`)
 
