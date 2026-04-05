@@ -118,12 +118,31 @@ User
 Before starting, make sure you have:
 
 - [ ] **IBM Bob IDE** installed and open (VS Code extension)
-- [ ] A **watsonx Orchestrate** environment ready (SaaS IBM Cloud or local Developer Edition)
 - [ ] **Python 3.10+** installed
 - [ ] **`uv`** package manager installed (`pip install uv`)
 - [ ] Your **wxO API key** ready
 
 > **Tip:** Your trainer will provide the wxO environment URL and API key.
+
+---
+
+### Install the watsonx Orchestrate ADK Extension
+
+**Step 1 — Install the VS Code extension**
+
+1. In VS Code, click the **Extensions** icon in the left sidebar (or press `Cmd+Shift+X` on Mac / `Ctrl+Shift+X` on Windows)
+2. In the search bar, type **`watsonx`**
+3. Find **IBM watsonx Orchestrate** in the results and click **Install**
+4. Wait for the installation to complete — you will see the **watsonx Orchestrate icon** appear in the left sidebar
+
+**Step 2 — Install the Orchestrate ADK**
+
+1. Once the extension is installed, look at the **bottom-right corner** of your VS Code window
+2. You will see an **`ADK: X`** indicator — click on it
+3. From the options that appear, select **"Install Orchestrate ADK"**
+4. Wait for the ADK to finish installing
+
+> **You are now ready to start the lab.**
 
 ---
 
