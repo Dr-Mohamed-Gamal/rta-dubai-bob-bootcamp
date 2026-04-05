@@ -452,10 +452,10 @@ Bob will:
 In the **Preview** chat panel on the right, type:
 
 ```
-Extract my invoice details from flight.pdf
+Extract my invoice details from flight_invoice.pdf
 ```
 
-The agent will prompt you to upload a file. Upload a sample airline invoice PDF and click **Send**.
+The agent will prompt you to upload a file. Upload the **`flight_invoice.pdf`** file included in this repo and click **Send**.
 
 **Expected JSON output:**
 
