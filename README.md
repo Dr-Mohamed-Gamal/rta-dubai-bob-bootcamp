@@ -50,7 +50,6 @@ In the Bob panel (bottom of your IDE), click the **mode selector button** at the
     Click here to switch mode
 ```
 
-> ⚠️ **Important:** If Bob asks you to switch modes, **ignore that request**. Always switch modes yourself using the button — never let Bob do it.
 
 ---
 
@@ -392,7 +391,6 @@ For each file Bob creates, review it then click **Save**:
 | `expense_report_agent.yaml` | `llm: groq/openai/gpt-oss-120b`, `kind: native`, flow is listed under `tools` |
 | `import-all.sh` | Both `tools import` and `agents import` commands are present |
 
-> ⚠️ If Bob asks you to switch modes at any point — **ignore that request** and stay in Advanced mode.
 
 ---
 
@@ -541,7 +539,6 @@ The agent also returns a **human-readable summary** alongside the JSON.
 | Agent not found after deploy | Re-run `import-all.sh` and refresh the wxO UI |
 | API key rejected | Ensure you're using the correct TechZone account |
 | Flow import fails | Check relative imports in `expense_extraction_flow.py` |
-| Bob switched modes on its own | Switch back manually — Bob should never change your mode |
 
 ---
 
