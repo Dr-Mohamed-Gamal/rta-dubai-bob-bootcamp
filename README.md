@@ -136,13 +136,6 @@ Before starting, make sure you have:
 3. Find **IBM watsonx Orchestrate** in the results and click **Install**
 4. Wait for the installation to complete — you will see the **watsonx Orchestrate icon** appear in the left sidebar
 
-**Step 2 — Install the Orchestrate ADK**
-
-1. Once the extension is installed, look at the **bottom-right corner** of your VS Code window
-2. You will see an **`ADK: X`** indicator — click on it
-3. From the options that appear, select **"Install Orchestrate ADK"**
-4. Wait for the ADK to finish installing
-
 > **You are now ready to start the lab.**
 
 ---
