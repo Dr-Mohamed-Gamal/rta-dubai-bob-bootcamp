@@ -106,10 +106,10 @@ User
 
 | Category | Fields |
 |----------|--------|
-| Invoice Info | Invoice Date, Transaction Mode |
-| Airline Info | Airline Name, Passenger Name, Ticket Number, Ticket Date, Flight Details |
-| Hotel Info | Hotel Name, Customer Name, City |
-| Fee Info | Base Fare, Taxes (breakdown), Total Amount, Currency |
+| Invoice Info | Invoice Number, Invoice Date, Transaction Mode |
+| Passenger Info | Passenger Name, Emirates ID |
+| Transport Services | Service Type, Route, Zone, Fare per trip |
+| Fee Info | Subtotal, VAT, Total Amount, Currency |
 
 ---
 
@@ -277,21 +277,19 @@ Required Fields to Extract:
 - Invoice Date
 - Transaction Mode (e.g., Credit Card, Bank Transfer, Cash)
 
-**Airline and Passenger Information (if airline invoice):**
-- Airline Name
+**Passenger Information:**
 - Passenger Name
-- Ticket Number
-- Ticket Date
-- Flight Details
+- Emirates ID
 
-**Hotel Information (if accommodation invoice):**
-- Hotel Name
-- Customer Name
-- City
+**Transport Services:**
+- Service Type (Metro, Taxi, Tram, Bus)
+- Route
+- Zone
+- Fare per trip
 
 **Fee Information:**
-- Base Fare / Charges
-- Taxes (with breakdown if available)
+- Subtotal
+- VAT (5%)
 - Total Amount
 - Currency
 ```
@@ -470,8 +468,8 @@ The agent will prompt you to upload a file. Upload the **`rta_transport_invoice.
   "invoice_date": "05 April 2026",
   "transaction_mode": "NOL Card",
   "currency": "AED",
-  "passenger_name": "Mohamed Gamal",
-  "emirates_id": "784-1985-1234567-1",
+  "passenger_name": "Ahmed Al Mansoori",
+  "emirates_id": "784-1990-7654321-2",
   "services": [
     { "date": "05 Apr 2026", "service": "Dubai Metro", "route": "Union to DIFC", "zone": "Zone 2", "fare": "5.80" },
     { "date": "05 Apr 2026", "service": "RTA Taxi",    "route": "DIFC to RTA HQ", "zone": "N/A",    "fare": "18.50" },
