@@ -35,24 +35,6 @@
 | **Plan** | 📝 | Creating structured plans — no code written |
 | **Advanced** | ⚡ | Writing code, accessing MCP servers, deploying |
 
-### How to switch modes
-
-In the Bob panel (bottom of your IDE), click the **mode selector button** at the bottom-left of the chat input bar and choose the mode you need.
-
-```
-┌─────────────────────────────────────────────┐
-│  Bob chat panel                             │
-│                                             │
-│  ...                                        │
-│                                             │
-├─────────────────────────────────────────────┤
-│  What's on your mind?                       │
-│                                    [Send]   │
-│  [ 📝 Plan ▾ ]   ✦  ✧  🖼  ▶              │
-└─────────────────────────────────────────────┘
-         ↑
-    Click here to switch mode
-```
 
 
 ---
