@@ -21,6 +21,39 @@
 
 ---
 
+## Bob Modes — Quick Reference
+
+> **You control which mode Bob operates in at all times. Bob will never switch modes on its own — you must do it manually.**
+
+| Mode | Icon | When to use |
+|------|------|-------------|
+| **Ask** | 💬 | Questions, explanations, viewing diagrams |
+| **Plan** | 📝 | Creating structured plans — no code written |
+| **Advanced** | ⚡ | Writing code, accessing MCP servers, deploying |
+
+### How to switch modes
+
+In the Bob panel (bottom of your IDE), click the **mode selector button** at the bottom-left of the chat input bar and choose the mode you need.
+
+```
+┌─────────────────────────────────────────────┐
+│  Bob chat panel                             │
+│                                             │
+│  ...                                        │
+│                                             │
+├─────────────────────────────────────────────┤
+│  What's on your mind?                       │
+│                                    [Send]   │
+│  [ 📝 Plan ▾ ]   ✦  ✧  🖼  ▶              │
+└─────────────────────────────────────────────┘
+         ↑
+    Click here to switch mode
+```
+
+> ⚠️ **Important:** If Bob asks you to switch modes, **ignore that request**. Always switch modes yourself using the button — never let Bob do it.
+
+---
+
 ## 1. What is IBM Bob?
 
 **IBM Bob** is an AI-powered coding assistant (IDE extension) that acts as your **developer partner**. It can:
@@ -29,14 +62,6 @@
 - Generate project structures, code, and configuration files
 - Access external documentation via **MCP (Model Context Protocol) servers**
 - Plan, implement, and deploy end-to-end solutions
-
-Bob works in three modes:
-
-| Mode | What it does |
-|------|-------------|
-| **Ask** | Answer questions, explain code, show diagrams |
-| **Plan** | Create structured implementation plans |
-| **Advanced** | Full coding + MCP server access for deployment |
 
 ---
 
@@ -82,7 +107,7 @@ User
        ▼              ▼
 ┌──────────────┐  ┌──────────────────────┐
 │ KVP Schema   │  │ Extract Structured   │
-│ Tool         │  │ Data (DocProc Node)  │
+│ (inline)     │  │ Data (DocProc Node)  │
 └──────────────┘  └──────────┬───────────┘
                              │ returns
                              ▼
@@ -97,7 +122,7 @@ User
 | Category | Fields |
 |----------|--------|
 | Invoice Info | Invoice Date, Transaction Mode |
-| Airline Info | Airline Name, Passenger Name, Ticket Number, Flight Details |
+| Airline Info | Airline Name, Passenger Name, Ticket Number, Ticket Date, Flight Details |
 | Hotel Info | Hotel Name, Customer Name, City |
 | Fee Info | Base Fare, Taxes (breakdown), Total Amount, Currency |
 
@@ -108,7 +133,7 @@ User
 Before starting, make sure you have:
 
 - [ ] **IBM Bob IDE** installed and open (VS Code extension)
-- [ ] A **watsonx Orchestrate** environment activated (SaaS IBM Cloud or local Developer Edition)
+- [ ] A **watsonx Orchestrate** environment ready (SaaS IBM Cloud or local Developer Edition)
 - [ ] **Python 3.10+** installed
 - [ ] **`uv`** package manager installed (`pip install uv`)
 - [ ] Your **wxO API key** ready
@@ -118,6 +143,8 @@ Before starting, make sure you have:
 ---
 
 ## Step 1 — Configure MCP Servers in Bob
+
+> 🔧 **No specific Bob mode needed for this step — you are creating files manually.**
 
 MCP servers give Bob direct access to watsonx Orchestrate documentation and commands.
 
@@ -169,6 +196,8 @@ Inside `.bob`, create a file named **`mcp.json`** with the following content:
 
 ## Step 2 — Create a Bob Rule for wxO Best Practices
 
+> 🔧 **No specific Bob mode needed for this step — you are creating files manually.**
+
 Bob rules are instructions that Bob **always follows** across all modes. We use them to make Bob an expert in watsonx Orchestrate patterns.
 
 ### 2.1 Create the rules directory
@@ -208,7 +237,7 @@ When working with IBM watsonx Orchestrate or watsonx Orchestrate ADK projects:
    - Query the knowledge base when uncertain about ADK features or best practices
 ```
 
-### Your `.bob` folder structure should look like this:
+### Your `.bob` folder structure should now look like this:
 
 ```
 .bob/
@@ -221,15 +250,12 @@ When working with IBM watsonx Orchestrate or watsonx Orchestrate ADK projects:
 
 ## Step 3 — Generate the Implementation Plan
 
-Now we tell Bob what to build. Bob will create a complete plan before writing any code.
+> 📝 **Switch Bob to PLAN mode before starting this step.**
+>
+> Click the mode selector at the bottom of the Bob panel and select **Plan**.
+> Make sure **Auto-approval is OFF**.
 
-### 3.1 Switch Bob to Plan mode
-
-In the Bob panel (bottom right of your IDE), click the mode selector and choose **Plan**.
-
-Make sure **Auto-approval is OFF** so you can review each step.
-
-### 3.2 Send this prompt to Bob
+### 3.1 Send this prompt to Bob
 
 Copy and paste the following into the Bob chat:
 
@@ -266,43 +292,56 @@ Required Fields to Extract:
 - Currency
 ```
 
-### 3.3 Approve Bob's requests
+### 3.2 Approve Bob's requests
 
 Bob will ask permission to read files and access MCP servers. Click **Approve** for each:
 
 | Request | Action |
 |---------|--------|
-| Read `wxo-implementation-guide.md` | Approve |
-| Access watsonx Orchestrate ADK docs MCP | Approve |
-| Review the generated task list | Approve if it looks correct |
+| Read `wxo-implementation-guide.md` | ✅ Approve |
+| Access watsonx Orchestrate ADK docs MCP | ✅ Approve |
+| Review the generated task list | ✅ Approve if it looks correct |
 
-### 3.4 Answer Bob's clarification questions
+### 3.3 Answer Bob's clarification questions
 
 Bob may ask questions like:
 
 - *Receipt upload method?* → **Direct document input through the flow**
 - *Output format?* → **Formatted JSON response in chat**
 - *Deployment target?* → **watsonx Orchestrate SaaS (production)**
+- *Unknown invoice type handling?* → **Extract only common fields and return a note**
 
-> Choose the **simplest option** for each question in this bootcamp.
+> Choose the **simplest option** for each question.
 
-### 3.5 Review the plan
+### 3.4 Review the plan
 
-Bob will generate:
-- A task list (e.g., 7–10 tasks)
-- An architecture design
-- A workflow diagram (Mermaid format)
+Bob will generate a complete plan. Once it appears, **stay in Plan mode** and move to the next step.
 
-To view the diagram, switch to **Ask mode** and type:
+---
+
+## Step 3b — View the Workflow Diagram
+
+> 💬 **Switch Bob to ASK mode now.**
+>
+> Click the mode selector and select **Ask**.
+
+Type this into Bob:
+
 ```
 Show me the workflow diagram
 ```
+
+Bob will render a Mermaid diagram of the full flow. Review it and confirm the architecture matches what you expect before proceeding.
+
+> 💡 If Mermaid diagrams don't render in your IDE, install the **Mermaid Preview** VS Code extension.
 
 ---
 
 ## Step 4 — Implement the Agent & Workflow
 
-Now Bob writes all the code. Switch to **Advanced mode** (for MCP access).
+> ⚡ **Switch Bob to ADVANCED mode now.**
+>
+> Click the mode selector and select **Advanced**. This gives Bob access to both MCP servers for code generation and deployment.
 
 ### 4.1 Send this implementation prompt to Bob
 
@@ -343,40 +382,34 @@ expense-report-agent/
     └── .gitkeep
 ```
 
-### 4.3 Review key files
+### 4.3 Review key files as Bob creates them
 
-**`tools/expense_extraction_flow.py`** — the heart of the workflow:
-- Defines the KVP schema (all fields to extract)
-- Uses `docproc` node for document understanding
-- Returns structured JSON
+For each file Bob creates, review it then click **Save**:
 
-**`agents/expense_report_agent.yaml`** — the agent config:
-- Sets the LLM model to `groq/openai/gpt-oss-120b`
-- Links the flow as a tool
-- Defines agent instructions and behavior
+| File | What to check |
+|------|--------------|
+| `expense_extraction_flow.py` | KVP schema fields are all present, `@flow` decorator used, `docproc` node configured |
+| `expense_report_agent.yaml` | `llm: groq/openai/gpt-oss-120b`, `kind: native`, flow is listed under `tools` |
+| `import-all.sh` | Both `tools import` and `agents import` commands are present |
 
-**`import-all.sh`** — the deployment script:
-- Imports the flow tool to wxO
-- Imports the agent YAML to wxO
-
-> **Review each file before approving.** Click **Save** to accept each file Bob creates.
+> ⚠️ If Bob asks you to switch modes at any point — **ignore that request** and stay in Advanced mode.
 
 ---
 
 ## Step 5 — Deploy to watsonx Orchestrate
+
+> ⚡ **Stay in ADVANCED mode for this step.**
 
 ### 5.1 Activate your wxO environment
 
 1. Click the **watsonx Orchestrate extension tile** in the left sidebar
 2. Click **Initialize the Workspace**
 3. In the **Environment Manager**, find your environment and click **Activate**
-4. Enter your **API key** when prompted in the command bar
+4. Enter your **API key** when prompted in the command bar at the top
 
 You should see: *"Environment is now active!"*
 
-### 5.2 Ask Bob to deploy
-
-Send this prompt to Bob (still in Advanced mode):
+### 5.2 Send this deployment prompt to Bob
 
 ```
 Run the import script to deploy the flow and agent to my watsonx Orchestrate environment.
@@ -384,12 +417,12 @@ If the orchestrate command line is not installed, install ibm-watsonx-orchestrat
 ```
 
 Bob will:
-1. Install `ibm-watsonx-orchestrate` package if needed
+1. Install `ibm-watsonx-orchestrate` if needed
 2. Run `import-all.sh`
 3. Import `expense_extraction_flow` tool → wxO
 4. Import `expense_report_agent` → wxO
 
-**Expected output:**
+**Expected terminal output:**
 ```
 ✅ Flow imported successfully
 ✅ Agent imported successfully
@@ -399,6 +432,8 @@ Bob will:
 ---
 
 ## Step 6 — Test the Agent
+
+> 💬 **Switch Bob to ASK mode now** (or close Bob — this step is done in the wxO UI).
 
 ### 6.1 Access watsonx Orchestrate
 
@@ -418,8 +453,8 @@ orchestrate chat start
 1. Go to **Manage Agents** (top navigation)
 2. Search for: `expense_report_agent`
 3. Confirm:
-   - [ ] Model is **GPT-OSS 120B – OpenAI (via Groq)**
-   - [ ] Tool **Expense Extraction Flow** is attached
+   - [ ] Model shows **GPT-OSS 120B – OpenAI (via Groq)**
+   - [ ] Tool **Expense Extraction Flow** is attached under Toolset
 
 ### 6.3 Run a test
 
@@ -429,7 +464,7 @@ In the **Preview** chat panel on the right, type:
 Extract my invoice details from flight.pdf
 ```
 
-The agent will ask you to upload a file. Upload a sample airline invoice PDF.
+The agent will prompt you to upload a file. Upload a sample airline invoice PDF and click **Send**.
 
 **Expected JSON output:**
 
@@ -441,15 +476,28 @@ The agent will ask you to upload a file. Upload a sample airline invoice PDF.
   "airline_name": "Global Airways",
   "passenger_name": "Jane Smith",
   "ticket_number": "TKT-987654321098",
+  "ticket_date": "2026-02-05",
   "flight_details": "GA 2045, Cairo (CAI) → New Delhi (DEL)",
   "base_fare": "850.00",
-  "fuel_surcharge": "125.00",
-  "airport_taxes": "78.50",
+  "taxes": "203.58",
   "total_amount": "1202.58"
 }
 ```
 
 The agent also returns a **human-readable summary** alongside the JSON.
+
+---
+
+## Mode Summary — What You Used and When
+
+| Step | Bob Mode | Why |
+|------|----------|-----|
+| Steps 1 & 2 — File setup | None (manual) | Creating config files directly |
+| Step 3 — Implementation plan | 📝 **Plan** | Bob plans without writing code |
+| Step 3b — View diagram | 💬 **Ask** | Bob answers questions, no side effects |
+| Step 4 — Write all code | ⚡ **Advanced** | Bob needs MCP access to generate & write files |
+| Step 5 — Deploy | ⚡ **Advanced** | Bob runs terminal commands via MCP |
+| Step 6 — Test | 💬 **Ask** (or none) | Testing happens in wxO UI |
 
 ---
 
@@ -468,7 +516,7 @@ The agent also returns a **human-readable summary** alongside the JSON.
 
 ### Key takeaways
 
-- Bob acts as a **developer partner**, not just a code generator
+- **You control Bob's mode** — always switch manually, never let Bob switch for you
 - **Bob Rules** ensure consistent patterns and reduce hallucinations
 - **MCP servers** give Bob live access to wxO documentation and deployment tools
 - **ADK (Agent Development Kit)** enables pro-code, production-ready agent development
@@ -493,6 +541,7 @@ The agent also returns a **human-readable summary** alongside the JSON.
 | Agent not found after deploy | Re-run `import-all.sh` and refresh the wxO UI |
 | API key rejected | Ensure you're using the correct TechZone account |
 | Flow import fails | Check relative imports in `expense_extraction_flow.py` |
+| Bob switched modes on its own | Switch back manually — Bob should never change your mode |
 
 ---
 
