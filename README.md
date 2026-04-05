@@ -118,7 +118,7 @@ User
 Before starting, make sure you have:
 
 - [ ] **IBM Bob IDE** installed and open (VS Code extension)
-- [ ] **watsonx Orchestrate SaaS environment** provisioned and accessible (provided by trainer)
+- [ ] **watsonx Orchestrate SaaS environment** provisioned and accessible
 - [ ] **Python 3.10+** installed
 - [ ] **`uv`** package manager installed (`pip install uv`)
 - [ ] Your **wxO environment URL** and **API key** ready
