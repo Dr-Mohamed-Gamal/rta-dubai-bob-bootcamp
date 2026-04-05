@@ -457,26 +457,30 @@ Bob will:
 In the **Preview** chat panel on the right, type:
 
 ```
-Extract my invoice details from flight_invoice.pdf
+Extract my transport invoice details from rta_transport_invoice.pdf
 ```
 
-The agent will prompt you to upload a file. Upload the **`flight_invoice.pdf`** file included in this repo and click **Send**.
+The agent will prompt you to upload a file. Upload the **`rta_transport_invoice.pdf`** file included in this repo and click **Send**.
 
 **Expected JSON output:**
 
 ```json
 {
-  "invoice_date": "2026-02-06",
-  "transaction_mode": "Credit Card",
-  "currency": "USD",
-  "airline_name": "Global Airways",
-  "passenger_name": "Jane Smith",
-  "ticket_number": "TKT-987654321098",
-  "ticket_date": "2026-02-05",
-  "flight_details": "GA 2045, Cairo (CAI) → New Delhi (DEL)",
-  "base_fare": "850.00",
-  "taxes": "203.58",
-  "total_amount": "1202.58"
+  "invoice_number": "RTA-INV-2026-00472",
+  "invoice_date": "05 April 2026",
+  "transaction_mode": "NOL Card",
+  "currency": "AED",
+  "passenger_name": "Mohamed Gamal",
+  "emirates_id": "784-1985-1234567-1",
+  "services": [
+    { "date": "05 Apr 2026", "service": "Dubai Metro", "route": "Union to DIFC", "zone": "Zone 2", "fare": "5.80" },
+    { "date": "05 Apr 2026", "service": "RTA Taxi",    "route": "DIFC to RTA HQ", "zone": "N/A",    "fare": "18.50" },
+    { "date": "06 Apr 2026", "service": "Dubai Metro", "route": "BurJuman to Airport", "zone": "Zone 3", "fare": "8.50" },
+    { "date": "06 Apr 2026", "service": "Dubai Tram",  "route": "Al Sufouh to JBR", "zone": "Zone 1", "fare": "3.00" }
+  ],
+  "subtotal": "35.80",
+  "vat": "1.79",
+  "total_amount": "37.59"
 }
 ```
 
