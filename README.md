@@ -122,7 +122,6 @@ Before starting, make sure you have:
 - [ ] **Python 3.10+** installed
 - [ ] **`uv`** package manager installed (`pip install uv`)
 
-> **Tip:** Your trainer will provide the wxO environment URL and API key before the lab starts.
 
 ---
 
