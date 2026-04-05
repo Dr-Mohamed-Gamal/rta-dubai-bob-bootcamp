@@ -533,4 +533,4 @@ The agent also returns a **human-readable summary** alongside the JSON.
 ---
 
 *Lab prepared for RTA Dubai AI Agent Bootcamp*  
-*Based on IBM Bob T3 Paris 2025 materials by Allen Chan, Ahmed Azraq, Syeda Ameena Begum & Jukka Juselius*
+*Consolidated by Dr. Mohamed Gamal - IBM Client Engineering*
