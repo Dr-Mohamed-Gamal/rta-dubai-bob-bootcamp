@@ -118,7 +118,7 @@ User
 Before starting, make sure you have:
 
 - [ ] **IBM Bob IDE** installed and open (VS Code extension)
-- [ ] **watsonx Orchestrate SaaS environment** provisioned and accessible, with your **environment URL** and **API key** ready
+- [ ] **watsonx Orchestrate SaaS environment** provisioned and accessible, with your **environment URL** and **API key** ready — no account yet? [Provision a free trial here](https://www.ibm.com/account/reg/us-en/signup?formid=urx-52753&cm_sp=ibmdev-_-developer-_-trial&utm_source=ibm_developer&utm_content=in_content_link&utm_id=tutorials_develop-agents-no-code-watsonx-orchestrate)
 - [ ] **Python 3.10+** installed
 - [ ] **`uv`** package manager installed (`pip install uv`)
 
