@@ -398,50 +398,12 @@ For each file Bob creates, review it then click **Save**:
 
 > ⚡ **Stay in ADVANCED mode for this step.**
 
-### 5.1 Install the watsonx Orchestrate VS Code Extension
+### 5.1 Activate your wxO environment
 
-If you haven't installed the extension yet, do it now:
-
-1. Open VS Code and click the **Extensions** icon in the left sidebar (or press `Cmd+Shift+X`)
-2. Search for **"IBM watsonx Orchestrate"**
-3. Click **Install**
-4. Once installed, you will see the **watsonx Orchestrate icon** appear in the left sidebar
-
-```
-Left sidebar icons:
-  📁  Explorer
-  🔍  Search
-  🔀  Source Control
-  🐞  Run & Debug
-  🧩  Extensions
-  ⚙️  wxO         ← watsonx Orchestrate extension (new)
-```
-
-### 5.2 Initialize the Workspace
-
-1. Click the **watsonx Orchestrate icon** in the left sidebar
-2. You will see the message: *"No workspace found. Please initialise a workspace to begin building."*
-3. Click **Initialise Workspace**
-4. Wait a few seconds — the extension will scan your project and set up the workspace
-
-### 5.3 Add your wxO Environment
-
-1. In the **Environment Manager** panel, click **Add +**
-2. Fill in the environment details your trainer provided:
-
-| Field | Value |
-|-------|-------|
-| Environment Name | e.g. `my-wxo-env` |
-| Type | IBM SaaS |
-| URL | Provided by trainer |
-
-3. Click **Save**
-
-### 5.4 Activate the Environment
-
-1. Find your environment in the **Environment Manager**
-2. Click **Activate**
-3. When prompted in the command bar at the top, enter your **API key** and press **Enter**
+1. Click the **watsonx Orchestrate extension tile** in the left sidebar
+2. Click **Initialize the Workspace**
+3. In the **Environment Manager**, find your environment and click **Activate**
+4. Enter your **API key** when prompted in the command bar at the top
 
 You should see: *"Environment is now active!"*
 
