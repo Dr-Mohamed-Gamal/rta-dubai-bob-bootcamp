@@ -432,7 +432,7 @@ Left sidebar icons:
 | Field | Value |
 |-------|-------|
 | Environment Name | e.g. `my-wxo-env` |
-| Type | IBM SaaS / Developer Edition |
+| Type | IBM SaaS |
 | URL | Provided by trainer |
 
 3. Click **Save**
@@ -473,16 +473,9 @@ Bob will:
 
 ### 6.1 Access watsonx Orchestrate
 
-**SaaS (IBM Cloud):**
-1. Log in to IBM Cloud
+1. Log in to **IBM Cloud**
 2. Go to **Resource List** → AI/Machine Learning
 3. Find **Watson Orchestrate-itz** → click **Launch watsonx Orchestrate**
-
-**Local Developer Edition:**
-```bash
-orchestrate chat start
-# Opens http://localhost:3000/chat-lite
-```
 
 ### 6.2 Find your agent
 
