@@ -1,5 +1,9 @@
+<p align="center">
+  <img src="rta.jpg" alt="RTA Dubai Logo" width="250"/>
+</p>
+
 # IBM Bob × watsonx Orchestrate — Bootcamp Lab
-### RTA Dubai | AI Agent Development Bootcamp
+### Roads & Transport Authority Dubai | AI Agent Development Bootcamp
 
 > **Goal:** By the end of this lab, you will use IBM Bob as your AI development partner to build, deploy, and test an **Expense Report Agent** on watsonx Orchestrate — without writing a single line of code manually.
 
