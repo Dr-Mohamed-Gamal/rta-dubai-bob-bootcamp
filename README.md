@@ -72,7 +72,7 @@
 
 ## 3. Architecture Overview
 
-We will build an **Expense Report Agent** that extracts structured data from airline and hotel invoices.
+We will build an **Transport Invoice Agent** that extracts structured data from RTA transport invoices.
 
 ```
 User
