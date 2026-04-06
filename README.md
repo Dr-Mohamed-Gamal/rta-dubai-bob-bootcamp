@@ -276,7 +276,7 @@ Create a watsonx Orchestrate agent that will help a user create an expense repor
 
 The agent will use a flow that:
 1. Accepts an uploaded document file (PDF or image)
-2. Extracts the expense fields below, validated with a KVP schema
+2. Extracts the expense fields below, validated with a KVP schema *(Key-Value Pair Schema — a structured list of field names and their expected values that tells the AI exactly what to extract from the document)*
 3. Returns the output in structured JSON format
 
 Required Fields to Extract:
