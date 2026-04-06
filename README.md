@@ -117,7 +117,7 @@ User
 
 Before starting, make sure you have:
 
-- [ ] **IBM Bob IDE** installed and open (VS Code extension)
+- [ ] **IBM Bob IDE** installed and open
 - [ ] **watsonx Orchestrate SaaS environment** provisioned and accessible, with your **environment URL** and **API key** ready — no account yet? [Provision a free trial here](https://www.ibm.com/account/reg/us-en/signup?formid=urx-52753&cm_sp=ibmdev-_-developer-_-trial&utm_source=ibm_developer&utm_content=in_content_link&utm_id=tutorials_develop-agents-no-code-watsonx-orchestrate)
 
 #### How to get your API key and Service instance URL
@@ -143,9 +143,7 @@ https://api.dl.watson-orchestrate.ibm.com/instances/<your-instance-id>
 
 ### Install the watsonx Orchestrate ADK Extension
 
-**Step 1 — Install the VS Code extension**
-
-1. In VS Code, click the **Extensions** icon in the left sidebar (or press `Cmd+Shift+X` on Mac / `Ctrl+Shift+X` on Windows)
+1. In Bob, click the **Extensions** icon in the left sidebar (or press `Cmd+Shift+X` on Mac / `Ctrl+Shift+X` on Windows)
 2. In the search bar, type **`watsonx`**
 3. Find **IBM watsonx Orchestrate** in the results and click **Install**
 4. Wait for the installation to complete — you will see the **watsonx Orchestrate icon** appear in the left sidebar
@@ -463,7 +461,7 @@ Bob will:
 In the **Preview** chat panel on the right, type:
 
 ```
-Extract my transport invoice details from rta_transport_invoice.pdf
+Extract my transport invoice details from rta_transport_invoice.pdf and output the results in table format
 ```
 
 The agent will prompt you to upload a file. Upload the **`rta_transport_invoice.pdf`** file included in this repo and click **Send**.
