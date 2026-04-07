@@ -135,7 +135,7 @@ https://api.dl.watson-orchestrate.ibm.com/instances/<your-instance-id>
 ```
 
 > You will need both the **API key** and the **Service instance URL** when activating your environment in Step 5.
-- [ ] **Python 3.10+** installed
+- [ ] **Python 3.11** installed
 - [ ] **`uv`** package manager installed (`pip install uv`)
 
 
