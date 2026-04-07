@@ -369,7 +369,7 @@ Bob will render a Mermaid diagram of the full flow. Review it and confirm the ar
 Implement the approved plan and follow the instructions below:
 
 **Requirements:**
-1. Create a native agent
+1. Create a native agent with this specific LLM model: groq/openai/gpt-oss-120b
 2. Build a document processing flow using a docproc node
 3. Define a KVP schema for the fields I need to extract
 4. For simplicity, include the KVP schema inline in the flow file
