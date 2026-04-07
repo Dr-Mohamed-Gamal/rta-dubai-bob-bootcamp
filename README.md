@@ -81,7 +81,7 @@ User
  ▼
 ┌─────────────────────────────┐
 │   Expense Report Agent      │  ← watsonx Orchestrate
-│   (LLM: GPT-OSS 120B/Groq) │
+│                             │
 └────────────┬────────────────┘
              │ invokes
              ▼
@@ -117,7 +117,7 @@ User
 
 Before starting, make sure you have:
 
-- [ ] **IBM Bob IDE** installed and open
+- [ ] **IBM Bob IDE** installed
 - [ ] **watsonx Orchestrate SaaS environment** provisioned and accessible, with your **environment URL** and **API key** ready — no account yet? [Provision a free trial here](https://www.ibm.com/account/reg/us-en/signup?formid=urx-52753&cm_sp=ibmdev-_-developer-_-trial&utm_source=ibm_developer&utm_content=in_content_link&utm_id=tutorials_develop-agents-no-code-watsonx-orchestrate)
 
 #### How to get your API key and Service instance URL
@@ -385,7 +385,7 @@ expense-report-agent/
 │   ├── __init__.py
 │   └── expense_extraction_flow.py    # Document processing flow + inline KVP schema
 ├── agents/
-│   └── expense_report_agent.yaml     # Native agent with GPT-OSS 120B
+│   └── expense_report_agent.yaml     # Native agent
 └── generated/                         # Auto-generated flow specs
     └── .gitkeep
 ```
@@ -453,7 +453,7 @@ Bob will:
 1. Go to **Manage Agents** (top navigation)
 2. Search for: `expense_report_agent`
 3. Confirm:
-   - [ ] Model shows **GPT-OSS 120B – OpenAI (via Groq)**
+   - [ ] Model is configured
    - [ ] Tool **Expense Extraction Flow** is attached under Toolset
 
 ### 6.3 Run a test
@@ -514,7 +514,7 @@ The agent also returns a **human-readable summary** alongside the JSON.
 | **Bob Rules** | Guided Bob with watsonx Orchestrate best practices |
 | **Implementation Plan** | Bob designed the full architecture |
 | **Expense Extraction Flow** | Document processing flow with inline KVP schema |
-| **Expense Report Agent** | Native agent using GPT-OSS 120B via Groq |
+| **Expense Report Agent** | Native agent on watsonx Orchestrate |
 | **Deployment Script** | One-click deploy via `import-all.sh` |
 | **Live Agent** | Running in watsonx Orchestrate, tested with a real invoice |
 
