@@ -419,6 +419,22 @@ For each file Bob creates, review it then click **Save**:
 
 > ⚡ **Stay in ADVANCED mode for this step.**
 
+### 5.0 Set up Python virtual environment
+
+> ⚡ **Stay in Advanced mode for this step.**
+
+Send this prompt to Bob:
+
+```
+Please help me:
+1. Install a standalone Python 3.11 using Homebrew (no conda)
+2. Set up a standard Python virtual environment using that Python version
+```
+
+Bob will run the necessary terminal commands to install Python 3.11 and create a virtual environment in your project directory.
+
+---
+
 ### 5.1 Activate your wxO environment
 
 1. Click the **watsonx Orchestrate extension tile** in the left sidebar
