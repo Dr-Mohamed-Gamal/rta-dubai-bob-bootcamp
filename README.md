@@ -312,14 +312,26 @@ Bob will ask permission to read files and access MCP servers. Click **Approve** 
 
 ### 3.3 Answer Bob's clarification questions
 
-Bob may ask questions like:
+Bob may ask some clarifying questions like these:
 
-- *Receipt upload method?* → **Direct document input through the flow**
-- *Output format?* → **Formatted JSON response in chat**
-- *Deployment target?* → **watsonx Orchestrate SaaS (production)**
-- *Unknown invoice type handling?* → **Extract only common fields and return a note**
+**1. LLM Model:** Which LLM would you like to use for the agent?
+(e.g., watsonx/ibm/granite-3-8b-instruct, watsonx/mistralai/mistral-small-3-1-24b-instruct-2503)
 
-> Choose the **simplest option** for each question.
+**2. Agent Style:** Which agent style would you prefer?
+(default, react, or planner)
+
+**3. Output Format:** Should the flow return:
+- A document reference URL (best for large documents)
+- An inline JSON object (best for small documents and immediate processing)
+
+**4. Additional Features:** Would you like any of these features?
+- Welcome message and starter prompts for the agent
+- Guidelines for specific behaviors
+- Error handling and validation messages
+
+**5. Deployment:** Are you using watsonx Orchestrate Developer Edition locally, or a cloud instance?
+
+> **Answer:** Type `gpt-oss` for the LLM model, and select the **default** option for all remaining questions.
 
 ### 3.4 Review the plan
 
