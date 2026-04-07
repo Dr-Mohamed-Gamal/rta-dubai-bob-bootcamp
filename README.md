@@ -331,7 +331,7 @@ Bob may ask some clarifying questions like these:
 
 **5. Deployment:** Are you using watsonx Orchestrate Developer Edition locally, or a cloud instance?
 
-> **Answer:** Type `gpt-oss` for the LLM model, and select the **default** option for all remaining questions.
+> **Answer with this:** Type `gpt-oss` for the LLM model, and select the **default** option for all remaining questions.
 
 ### 3.4 Review the plan
 
