@@ -119,10 +119,9 @@ Before starting, make sure you have:
 
 - [ ] **IBM Bob IDE** installed
   1. Go to [bob.ibm.com](https://bob.ibm.com)
-  2. Create a free account — you can sign up using your **Gmail account**
-  3. Download the installer for your operating system (Mac / Windows / Linux)
-  4. Run the installer and follow the on-screen instructions
-  5. Once installed, launch Bob and **log in with your Gmail account**
+  2. Download the installer for your operating system (Mac / Windows / Linux)
+  3. Run the installer and follow the on-screen instructions
+  4. Once installed, launch Bob and **log in with your Gmail account**
 - [ ] **watsonx Orchestrate SaaS environment** provisioned and accessible, with your **environment URL** and **API key** ready — no account yet? [Provision a free trial here](https://www.ibm.com/account/reg/us-en/signup?formid=urx-52753&cm_sp=ibmdev-_-developer-_-trial&utm_source=ibm_developer&utm_content=in_content_link&utm_id=tutorials_develop-agents-no-code-watsonx-orchestrate)
 
 #### How to get your API key and Service instance URL
