@@ -560,4 +560,4 @@ The agent also returns a **human-readable summary** alongside the JSON.
 ---
 
 *Lab prepared for RTA Dubai AI Agent Bootcamp*  
-*Consolidated by Dr. Mohamed Gamal - IBM Client Engineering*
+
