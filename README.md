@@ -498,20 +498,28 @@ Bob will run the necessary terminal commands to install Python 3.11 and create a
 
 1. Click the **watsonx Orchestrate extension tile** in the left sidebar
 2. Click **Initialize the Workspace**
-3. In the **Environment Manager**, find your environment and click **Activate**
-4. Enter your **API key** when prompted in the command bar at the top
+3. In the **Environment Manager**, click **Add +**
+4. Fill in the **Name** field with a name of your choice (e.g. `my-wxo-env`)
+5. Fill in the **URL** field with your Service instance URL
+6. Check **Activate after creation**
+7. Click **Submit**
+8. Enter your **API key** when prompted in the command bar at the top
+
+<p align="center"><img src="wxo-env-manager.jpg" alt="watsonx Orchestrate Environment Manager" width="350"/></p>
 
 You should see: *"Environment is now active!"*
 
 ---
 
-**If the environment is not activated via the UI, use one of the fallback options below:**
+**If the environment is not activated via the UI, use the fallback option below:**
+>  **Replace the Instance URL and API key with the ones you copied in Step 4 (Prerequisites) into the prompt**
 
-**Option A — Ask Bob to run the CLI commands:**
+**Put the following prompt in bob:**
 
 ```
-Add and activate the orchestrate environment using the commands below.
-Use the API key and URL you got from Step 4 (Prerequisites).
+Add and activate the orchestrate environment using the credentials and commands below.
+instance url = ******
+api key = ******
 Choose a name for the environment yourself:
 
 orchestrate env add -n [NAME] -u [INSTANCE URL] --api-key [YOUR_API_KEY]
@@ -523,17 +531,6 @@ orchestrate env activate [NAME]
 orchestrate env add -n my-wxo-env -u https://your-instance.orchestrate.ibm.com --api-key sk-xxxxxxxxxxxxxxxx
 orchestrate env activate my-wxo-env
 ```
-
-**Option B — Fill in the wizard manually:**
-
-1. In the **Environment Manager**, click **Add +**
-2. Fill in the **Name** field with a name of your choice (e.g. `my-wxo-env`)
-3. Fill in the **URL** field with your Service instance URL
-4. Check **Activate after creation**
-5. Click **Submit**
-6. You will be prompted to enter your **API key** — enter it and confirm
-
-<p align="center"><img src="wxo-env-manager.jpg" alt="watsonx Orchestrate Environment Manager" width="350"/></p>
 
 ### 5.2 Send this deployment prompt to Bob
 
