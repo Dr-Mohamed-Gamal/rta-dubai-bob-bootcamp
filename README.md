@@ -290,21 +290,7 @@ In your project workspace, create a folder named **`.bob`**, then inside it crea
 
 ### 1.3 Test Both Servers (Optional)
 
-Restart Bob completely (quit and reopen), then verify both servers are working:
-
-**Test the documentation server** — type in Bob's chat:
-```
-Can you search the watsonx Orchestrate documentation for "flow decorator"?
-```
-Bob should return search results from IBM's watsonx Orchestrate documentation.
-
-**Test the local development server** — type in Bob's chat:
-```
-Can you list the available watsonx Orchestrate development tools you have access to?
-```
-Bob should list tools such as `list_agents`, `export_agent`, `list_tools`, `check_version`.
-
-> **Note:** If the local server shows "No tools available", this is normal before authenticating with watsonx Orchestrate. The server will become fully operational after you activate your environment in Step 5.
+→ **[View full testing steps](TESTING_MCP_SERVERS.md)**
 
 ---
 
