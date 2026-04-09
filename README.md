@@ -509,6 +509,35 @@ Bob will run the necessary terminal commands to install Python 3.11 and create a
 
 You should see: *"Environment is now active!"*
 
+---
+
+**If the environment is not activated via the UI, use one of the fallback options below:**
+
+**Option A — Ask Bob to run the CLI commands:**
+
+```
+Add and activate the orchestrate environment using the commands below.
+Choose a name for the environment yourself:
+
+orchestrate env add -n [NAME] -u [INSTANCE URL] --api-key [YOUR_API_KEY]
+orchestrate env activate [NAME]
+```
+
+**Example:**
+```bash
+orchestrate env add -n my-wxo-env -u https://your-instance.orchestrate.ibm.com --api-key sk-xxxxxxxxxxxxxxxx
+orchestrate env activate my-wxo-env
+```
+
+**Option B — Fill in the wizard manually:**
+
+1. In the **Environment Manager**, click **Add +**
+2. Fill in the **Name** field with a name of your choice (e.g. `my-wxo-env`)
+3. Fill in the **URL** field with your Service instance URL
+4. Expand **ADVANCED** and enter your **API key**
+5. Check **Activate after creation**
+6. Click **Submit**
+
 ### 5.2 Send this deployment prompt to Bob
 
 ```
