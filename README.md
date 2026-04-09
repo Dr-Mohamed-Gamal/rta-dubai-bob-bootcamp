@@ -517,6 +517,7 @@ You should see: *"Environment is now active!"*
 
 ```
 Add and activate the orchestrate environment using the commands below.
+Use the API key and URL you got from Step 4 (Prerequisites).
 Choose a name for the environment yourself:
 
 orchestrate env add -n [NAME] -u [INSTANCE URL] --api-key [YOUR_API_KEY]
