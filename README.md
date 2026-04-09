@@ -186,9 +186,10 @@ Open Bob and send this message:
 ```
 Please install the following dependencies needed for MCP servers:
 1. Install uv package manager if not already installed
-2. Install ibm-watsonx-orchestrate version 2.7.0
-3. Install ibm-watsonx-orchestrate-mcp-server version 2.7.0
-4. Install mcp-proxy
+2. Add uv to PATH (Windows: %USERPROFILE%\.local\bin, macOS/Linux: ~/.local/bin)
+3. Install ibm-watsonx-orchestrate version 2.7.0
+4. Install ibm-watsonx-orchestrate-mcp-server version 2.7.0
+5. Install mcp-proxy
 ```
 
 Bob will install:
