@@ -535,9 +535,9 @@ orchestrate env activate my-wxo-env
 1. In the **Environment Manager**, click **Add +**
 2. Fill in the **Name** field with a name of your choice (e.g. `my-wxo-env`)
 3. Fill in the **URL** field with your Service instance URL
-4. Expand **ADVANCED** and enter your **API key**
-5. Check **Activate after creation**
-6. Click **Submit**
+4. Check **Activate after creation**
+5. Click **Submit**
+6. You will be prompted to enter your **API key** — enter it and confirm
 
 <p align="center"><img src="wxo-env-manager.jpg" alt="watsonx Orchestrate Environment Manager" width="350"/></p>
 
