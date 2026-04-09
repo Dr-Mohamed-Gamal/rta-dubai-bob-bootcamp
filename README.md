@@ -492,7 +492,7 @@ Send this prompt to Bob:
 
 ```
 Please help me:
-1. Install a standalone Python 3.11 (if not existing) (no conda)
+1. Install a standalone Python 3.11.9 (if not existing) (no conda)
 2. Set up a standard Python virtual environment using that Python version
 ```
 
