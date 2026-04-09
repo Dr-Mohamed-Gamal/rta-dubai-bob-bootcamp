@@ -538,6 +538,8 @@ orchestrate env activate my-wxo-env
 5. Check **Activate after creation**
 6. Click **Submit**
 
+<p align="center"><img src="wxo-env-manager.jpg" alt="watsonx Orchestrate Environment Manager" width="350"/></p>
+
 ### 5.2 Send this deployment prompt to Bob
 
 ```
