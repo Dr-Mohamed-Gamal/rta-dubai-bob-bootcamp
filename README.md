@@ -367,13 +367,7 @@ Required Fields to Extract:
 
 ### 3.2 Approve Bob's requests
 
-Bob will ask permission to read files and access MCP servers. Click **Approve** for each:
-
-| Request | Action |
-|---------|--------|
-| Read `wxo-implementation-guide.md` | ✅ Approve |
-| Access watsonx Orchestrate ADK docs MCP | ✅ Approve |
-| Review the generated task list | ✅ Approve if it looks correct |
+Bob will ask permission to read files and access MCP servers. Click **Approve** for each request.
 
 ### 3.3 Answer Bob's clarification questions
 
