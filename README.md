@@ -140,32 +140,6 @@ https://api.dl.watson-orchestrate.ibm.com/instances/<your-instance-id>
 
 > You will need both the **API key** and the **Service instance URL** when activating your environment in Step 5.
 - [ ] **Python 3.11** installed
-- [ ] **`uv`** package manager installed — needed to run MCP servers via `uvx`:
-
-  **macOS / Linux:**
-  ```bash
-  curl -LsSf https://astral.sh/uv/install.sh | sh
-  ```
-  **Windows (PowerShell):**
-  ```powershell
-  powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
-  ```
-  Restart your terminal, then verify:
-  ```bash
-  uvx --version
-  ```
-
-- [ ] **MCP server packages pre-fetched** — run these once while you have internet access (they are downloaded on first use):
-
-  ```bash
-  # Docs MCP server (connects Bob to wxO documentation)
-  uvx mcp-proxy --help
-
-  # ADK MCP server (gives Bob CLI access to deploy agents & tools)
-  uvx ibm-watsonx-orchestrate-mcp-server --help
-  ```
-
-  > **Why pre-fetch?** At the venue, internet may be slow or restricted. Running these commands now caches the packages locally so Bob can start the MCP servers instantly during the lab.
 
 ---
 
