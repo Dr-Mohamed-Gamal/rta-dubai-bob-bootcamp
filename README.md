@@ -184,15 +184,55 @@ https://api.dl.watson-orchestrate.ibm.com/instances/<your-instance-id>
 
 > 🔧 **No specific Bob mode needed for this step — you are creating files manually.**
 
-MCP servers give Bob direct access to watsonx Orchestrate documentation and commands.
+### What are MCP Servers?
 
-### 1.1 Create the configuration folder
+**MCP (Model Context Protocol) servers** are external programs that extend IBM Bob's capabilities by providing:
 
-In your project workspace, create a folder named **`.bob`**
+- **Access to documentation** — Bob can search and retrieve information from IBM watsonx Orchestrate docs
+- **Development tools** — Bob can list agents, export configurations, manage tools, and deploy to watsonx Orchestrate
+- **Real-time information** — Bob gets up-to-date API references and code examples
 
-### 1.2 Create the MCP config file
+Think of MCP servers as plugins that give Bob superpowers for specific tasks.
 
-Inside `.bob`, create a file named **`mcp.json`** with the following content:
+### The Two Servers We'll Configure
+
+| Server Name | Type | Purpose |
+|------------|------|---------|
+| `watsonx-orchestrate-adk-docs` | Global | Search IBM watsonx Orchestrate documentation |
+| `watsonx-orchestrate-adk` | Local | Access watsonx Orchestrate development tools (CLI commands) |
+
+---
+
+### 1.0 Install Required Dependencies
+
+MCP servers require specific Python packages to run. We'll use Bob to install them.
+
+Open Bob and send this message:
+
+```
+Please install the following dependencies needed for MCP servers:
+1. Install uv package manager if not already installed
+2. Install ibm-watsonx-orchestrate version 2.7.0
+3. Install ibm-watsonx-orchestrate-mcp-server version 2.7.0
+4. Install mcp-proxy
+```
+
+Bob will install:
+- `uv/uvx` — Fast Python package manager
+- `ibm-watsonx-orchestrate` (v2.7.0) — Core IBM watsonx Orchestrate library
+- `ibm-watsonx-orchestrate-mcp-server` (v2.7.0) — MCP server for development tools
+- `mcp-proxy` — Proxy for remote MCP servers
+
+---
+
+### 1.1 Configure the Global MCP Server
+
+The global MCP server (`watsonx-orchestrate-adk-docs`) provides documentation search capabilities across all your projects.
+
+1. In Bob, click the **Settings icon** (⚙️) in the bottom-left corner
+2. In the Settings menu, click **MCP** in the left sidebar
+3. Under "Global MCP Servers", click the **Open** button
+4. Paste the following configuration into the file and save (`Cmd+S` on Mac / `Ctrl+S` on Windows):
 
 ```json
 {
@@ -204,31 +244,67 @@ Inside `.bob`, create a file named **`mcp.json`** with the following content:
         "--transport",
         "streamablehttp",
         "https://developer.watson-orchestrate.ibm.com/mcp"
-      ]
-    },
+      ],
+      "alwaysAllow": [
+        "search_ibm_watsonx_orchestrate_adk",
+        "get_page_ibm_watsonx_orchestrate_adk"
+      ],
+      "disabled": false
+    }
+  }
+}
+```
+
+---
+
+### 1.2 Configure the Local MCP Server
+
+The local MCP server (`watsonx-orchestrate-adk`) provides development tools specific to your current project.
+
+In your project workspace, create a folder named **`.bob`**, then inside it create a file named **`mcp.json`** with the following content:
+
+```json
+{
+  "mcpServers": {
     "watsonx-orchestrate-adk": {
       "command": "uvx",
       "args": [
-        "ibm-watsonx-orchestrate-mcp-server"
+        "--with",
+        "ibm-watsonx-orchestrate==2.7.0",
+        "ibm-watsonx-orchestrate-mcp-server==2.7.0"
       ],
       "env": {
         "WXO_MCP_WORKING_DIRECTORY": "/absolute/path/to/your/workspace",
         "WXO_MCP_DEBUG": ""
       },
+      "disabled": false,
       "timeout": 300
     }
   }
 }
 ```
 
-> **Important:** Replace `/absolute/path/to/your/workspace` with the full path to your project folder.
+> **Important:** Replace `/absolute/path/to/your/workspace` with the full absolute path to your project folder.
 
-### What each server does
+---
 
-| Server | Purpose |
-|--------|---------|
-| `watsonx-orchestrate-adk-docs` | Gives Bob access to wxO developer documentation |
-| `watsonx-orchestrate-adk` | Gives Bob direct CLI access to create/deploy agents & tools |
+### 1.3 Test Both Servers (Optional)
+
+Restart Bob completely (quit and reopen), then verify both servers are working:
+
+**Test the documentation server** — type in Bob's chat:
+```
+Can you search the watsonx Orchestrate documentation for "flow decorator"?
+```
+Bob should return search results from IBM's watsonx Orchestrate documentation.
+
+**Test the local development server** — type in Bob's chat:
+```
+Can you list the available watsonx Orchestrate development tools you have access to?
+```
+Bob should list tools such as `list_agents`, `export_agent`, `list_tools`, `check_version`.
+
+> **Note:** If the local server shows "No tools available", this is normal before authenticating with watsonx Orchestrate. The server will become fully operational after you activate your environment in Step 5.
 
 ---
 
@@ -596,8 +672,11 @@ The agent also returns a **human-readable summary** alongside the JSON.
 
 | Issue | Solution |
 |-------|----------|
-| MCP server not connecting | Check `WXO_MCP_WORKING_DIRECTORY` is an absolute path |
+| MCP server not connecting | Check `WXO_MCP_WORKING_DIRECTORY` is an absolute path; verify JSON files have no typos |
+| Global server not found | Open Bob Settings → MCP → verify the global config was saved correctly |
 | `orchestrate` command not found | Run `pip install ibm-watsonx-orchestrate` |
+| Dependencies not installed | Ask Bob to install dependencies again; check your internet connection |
+| Local server shows no tools | Normal before authentication — activate your wxO environment in Step 5 |
 | Agent not found after deploy | Re-run `import-all.sh` and refresh the wxO UI |
 | API key rejected | Ensure you're using the correct TechZone account |
 | Flow import fails | Check relative imports in `expense_extraction_flow.py` |
