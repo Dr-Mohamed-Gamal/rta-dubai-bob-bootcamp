@@ -205,7 +205,7 @@ The global MCP server (`watsonx-orchestrate-adk-docs`) provides documentation se
 
 1. In Bob, click the **Bob Settings icon** (⚙️) in the top right corner of the chat
 2. In the Settings menu, click **MCP** in the left sidebar
-3. Under "Global MCP Servers", click the **Open** button
+3. Under "Global MCP", click the **Open** button
 4. Paste the following configuration into the file and save (`Cmd+S` on Mac / `Ctrl+S` on Windows):
 
 ```json
