@@ -7,6 +7,8 @@
 
 > **Goal:** Verify that both MCP servers are working correctly before proceeding with the lab.
 
+> ⚡ **Switch Bob to ADVANCED mode now.**
+
 ---
 
 ## Step 1 — Restart IBM Bob
